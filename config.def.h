@@ -17,12 +17,19 @@ static const char col_gray2[]         = "#444444";
 static const char col_gray3[]         = "#bbbbbb";
 static const char col_gray4[]         = "#eeeeee";
 static const char col_cyan[]          = "#005577";
+/* My Colors */
+static const char white[]             = "#ffffff";
+static const char black[]             = "#000000";
+static const char lcream[]            = "#fbf1c7";
+static const char cream[]             = "#d4be98";
+static const char blue[]              = "#458588";
+static const char grey[]              = "#222222";
 static const unsigned int baralpha    = 130;//0xd0
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]        = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	/*                   fg     bg     border   */
+	[SchemeNorm]     = { cream, black, "#000000" }, //inactive
+	[SchemeSel]      = { lcream,black, "#000000" }, //active
 };
 static const unsigned int alphas[][3] = {
 	/*               fg      bg        border     */
@@ -86,6 +93,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("$BROWSER") },
+	{ MODKEY,                       XK_m,      spawn,          SHCMD("spotify") },
+	{ MODKEY,                       XK_e,      spawn,          SHCMD("code") },
+	{ MODKEY,                       XK_f,      spawn,          SHCMD("pcmanfm") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
@@ -98,10 +108,10 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} }, //
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_p,      setlayout,      {0} }, //
+	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[0]} },
+	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY|ShiftMask,             XK_p,      setlayout,      {0} }, //
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
