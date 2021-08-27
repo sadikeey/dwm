@@ -17,8 +17,8 @@ static const char dmenufont[]         = "Montserrat Semi Bold:size=11:antialias=
 static const char col_gray1[]         = "#222222";
 static const char col_gray2[]         = "#444444";
 static const char col_gray3[]         = "#bbbbbb";
-static const char col_gray4[]         = "#eeeeee";
-static const char col_cyan[]          = "#005577";
+static const char col_gray4[]         = "#000000";
+static const char col_cyan[]          = "#d4be98";
 /* My Colors */
 static const char white[]             = "#ffffff";
 static const char black[]             = "#000000";
