@@ -2,13 +2,15 @@
 #include <X11/XF86keysym.h>
 
 /* appearance */
-static const unsigned int borderpx    = 0;        /* border pixel of windows */
-static const int startwithgaps	      = 1;	 /* 1 means gaps are used by default */
-static const unsigned int gappx       = 20;       /* default gap between windows in pixels */
-static const unsigned int snap        = 32;       /* snap pixel */
-static const int showbar              = 1;        /* 0 means no bar */
-static const int topbar               = 1;        /* 0 means bottom bar */
-static const int user_bh              = 30;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
+static const unsigned int borderpx    = 0;       /* border pixel of windows */
+static const int startwithgaps	      = 1;     	 /* 1 means gaps are used by default */
+static const unsigned int gappx       = 15;      /* default gap between windows in pixels */
+static const unsigned int snap        = 32;      /* snap pixel */
+static const int showbar              = 1;       /* 0 means no bar */
+static const int topbar               = 1;       /* 0 means bottom bar */
+static const int user_bh              = 32;      /* bar height */ 
+static const unsigned int baralpha    = 180;//0xd0
+static const unsigned int borderalpha = OPAQUE;
 static const char *fonts[]            = {"Montserrat Semi Bold:size=11:antialias=true:autohint=true",
                                          "FiraCode Nerd Font:size=12:antialias=true:autohint=true"};
 static const char dmenufont[]         = "Montserrat Semi Bold:size=11:antialias=true:autohint=true";
@@ -24,8 +26,6 @@ static const char lcream[]            = "#fbf1c7";
 static const char cream[]             = "#d4be98";
 static const char blue[]              = "#458588";
 static const char grey[]              = "#222222";
-static const unsigned int baralpha    = 130;//0xd0
-static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]        = {
 	/*                   fg     bg     border   */
 	[SchemeNorm]     = { cream, black, "#000000" }, //inactive
