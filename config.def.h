@@ -4,12 +4,12 @@
 /* appearance */
 static const unsigned int borderpx    = 1;       /* border pixel of windows */
 static const int startwithgaps	      = 1;     	 /* 1 means gaps are used by default */
-static const unsigned int gappx       = 10;      /* default gap between windows in pixels */
+static const unsigned int gappx       = 6;      /* default gap between windows in pixels */
 static const unsigned int snap        = 32;      /* snap pixel */
 static const int showbar              = 1;       /* 0 means no bar */
 static const int topbar               = 1;       /* 0 means bottom bar */
 static const int user_bh              = 32;      /* bar height */ 
-static const unsigned int baralpha    = 180;//0xd0
+static const unsigned int baralpha    = 170;//0xd0
 static const unsigned int borderalpha = OPAQUE;
 static const char *fonts[]            = {"Montserrat Semi Bold:size=11:antialias=true:autohint=true",
                                          "FiraCode Nerd Font:size=12:antialias=true:autohint=true"};
@@ -28,8 +28,8 @@ static const char blue[]              = "#458588";
 static const char grey[]              = "#222222";
 static const char *colors[][3]        = {
 	/*                   fg     bg     border   */
-	[SchemeNorm]     = { cream, black, "#000000" }, //inactive
-	[SchemeSel]      = { lcream,black, lcream }, //active
+	[SchemeNorm]     = { cream, black, black }, //inactive
+	[SchemeSel]      = { lcream,black, cream }, //active
 };
 static const unsigned int alphas[][3] = {
 	/*               fg      bg        border     */
@@ -96,7 +96,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_m,      spawn,          SHCMD("spotify") },
 	{ MODKEY,                       XK_e,      spawn,          SHCMD("code") },
 	{ MODKEY,                       XK_f,      spawn,          SHCMD("pcmanfm") },
-	{ MODKEY,                       XK_b,      togglebar,      {0} },
+	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
