@@ -2,9 +2,9 @@
 #include <X11/XF86keysym.h>
 
 /* appearance */
-static const unsigned int borderpx    = 0;       /* border pixel of windows */
+static const unsigned int borderpx    = 1;       /* border pixel of windows */
 static const int startwithgaps	      = 1;     	 /* 1 means gaps are used by default */
-static const unsigned int gappx       = 15;      /* default gap between windows in pixels */
+static const unsigned int gappx       = 10;      /* default gap between windows in pixels */
 static const unsigned int snap        = 32;      /* snap pixel */
 static const int showbar              = 1;       /* 0 means no bar */
 static const int topbar               = 1;       /* 0 means bottom bar */
@@ -29,7 +29,7 @@ static const char grey[]              = "#222222";
 static const char *colors[][3]        = {
 	/*                   fg     bg     border   */
 	[SchemeNorm]     = { cream, black, "#000000" }, //inactive
-	[SchemeSel]      = { lcream,black, "#000000" }, //active
+	[SchemeSel]      = { lcream,black, lcream }, //active
 };
 static const unsigned int alphas[][3] = {
 	/*               fg      bg        border     */
@@ -113,7 +113,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY|ShiftMask,             XK_p,      setlayout,      {0} }, //
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
-	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
+	{ ControlMask|ShiftMask,        XK_f,      togglefullscr,  {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
