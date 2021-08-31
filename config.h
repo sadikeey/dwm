@@ -20,32 +20,17 @@ static const int topbar               = 1;      /* 0 means bottom bar */
 static const double activeopacity     = 1.0f;   /* Window opacity when it's focused (0 <= opacity <= 1) */
 static const double inactiveopacity   = 0.875f; /* Window opacity when it's inactive (0 <= opacity <= 1) */
 static const int user_bh              = 32;     /* bar height */ 
-static const unsigned int baralpha    = 170;    /* 0xd0 */
-static const unsigned int borderalpha = OPAQUE;
 static const char *fonts[]            = {"Montserrat Semi Bold:size=11:antialias=true:autohint=true",
                                          "FiraCode Nerd Font:size=12:antialias=true:autohint=true"};
-static const char col_gray1[]         = "#222222";
-static const char col_gray2[]         = "#444444";
-static const char col_gray3[]         = "#bbbbbb";
-static const char col_gray4[]         = "#000000";
-static const char col_cyan[]          = "#d4be98";
-/* My Colors */
-static const char white[]             = "#ffffff";
-static const char black[]             = "#000000";
-static const char lcream[]            = "#fbf1c7";
-static const char cream[]             = "#d4be98";
-static const char blue[]              = "#458588";
-static const char grey[]              = "#222222";
+static const unsigned int baralpha    = 170;    /* 0xd0 */
+static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]        = {
-	/*                    fg     bg     border   */
-	[SchemeNorm]     = { cream, black, black }, //inactive
-	[SchemeSel]      = { lcream,black, lcream },//active
-};
+                    	/* type               fg     bg     border   */
+                 	 [SchemeNorm]     = { "#d4be98", "#000000", "#000000" },    //inactive
+                     [SchemeSel]      = { "#fbf1c7", "#000000", "#fbf1c7" }, }; //active
 static const unsigned int alphas[][3] = {
-	/*                    fg      bg        border     */
-	[SchemeNorm]     = { OPAQUE, baralpha, borderalpha },
-	[SchemeSel]      = { OPAQUE, baralpha, borderalpha },
-};
+                	 [SchemeNorm]     = { OPAQUE, baralpha, borderalpha },
+	                 [SchemeSel]      = { OPAQUE, baralpha, borderalpha }, };
 
 /* tagging */
 static const char *tags[] = {  "   ", "  ", "  ", "  ", "  ", "  ", };
