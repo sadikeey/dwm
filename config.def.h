@@ -41,7 +41,7 @@ static const unsigned int alphas[][3] = {
 };
 
 /* tagging */
-static const char *tags[] = {  "    ", "  ", "  ", "  ", "  ", "  ", };
+static const char *tags[] = {  "   ", "  ", "  ", "  ", "  ", "  ", };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -83,12 +83,10 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 
-/* Defining Volume Control */
+/* Defining Volume and Brightness Keys */
 static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
 static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
-
-/* Defining Brightness Control */
 static const char *upbrightness[]   = { "/usr/bin/xbacklight",  "-inc",  "10",   NULL };
 static const char *downbrightness[] = { "/usr/bin/xbacklight",  "-dec",  "10",   NULL };
 
@@ -99,6 +97,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("$BROWSER") },
 	{ MODKEY,                       XK_m,      spawn,          SHCMD("spotify") },
 	{ MODKEY,                       XK_e,      spawn,          SHCMD("code") },
+	{ MODKEY,                       XK_p,      spawn,          SHCMD("pcmanfm") },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
