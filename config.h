@@ -75,11 +75,10 @@ static const char *downbrightness[] = { "/usr/bin/xbacklight",  "-dec",         
 #define MODKEY Mod4Mask
 #define TERMMOD Mod1Mask|ShiftMask 
 #define TAGKEYS(KEY,TAG) \
-	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
-	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
-	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
-	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
-
+	{ MODKEY,                       KEY,                       view,           {.ui = 1 << TAG} }, \
+	{ MODKEY|ControlMask,           KEY,                       toggleview,     {.ui = 1 << TAG} }, \
+	{ MODKEY|ShiftMask,             KEY,                       tag,            {.ui = 1 << TAG} }, \
+	{ MODKEY|ControlMask|ShiftMask, KEY,                       toggletag,      {.ui = 1 << TAG} },
 
 /* Key Bindings */
 static Key keys[] = {
