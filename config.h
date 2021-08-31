@@ -1,6 +1,12 @@
+/*                                   ____  ____  _  __
+                                    / ___||  _ \| |/ /
+                                    \___ \| | | | ' /   
+                                     ___) | |_| | . \
+                                    |____/|____/|_|\_\
+*/
+
 /* See LICENSE file for copyright and license details. */
 #include <X11/XF86keysym.h>
-
 /* appearance */
 static const unsigned int borderpx    = 2;      /* border pixel of windows */
 static const unsigned int snap        = 32;     /* snap pixel */
@@ -18,7 +24,6 @@ static const unsigned int baralpha    = 170;    /* 0xd0 */
 static const unsigned int borderalpha = OPAQUE;
 static const char *fonts[]            = {"Montserrat Semi Bold:size=11:antialias=true:autohint=true",
                                          "FiraCode Nerd Font:size=12:antialias=true:autohint=true"};
-static const char dmenufont[]         = "Montserrat Semi Bold:size=11:antialias=true:autohint=true";
 static const char col_gray1[]         = "#222222";
 static const char col_gray2[]         = "#444444";
 static const char col_gray3[]         = "#bbbbbb";
@@ -68,7 +73,7 @@ static const Layout layouts[]   = {
 
 /* Defining Application */
 static char dmenumon[2]       = "0";    /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-p", "Run: ", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 
 /* Defining Volume and Brightness Keys */
