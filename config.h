@@ -11,8 +11,8 @@ static const unsigned int gappov      = 15;       /* vert outer gap between wind
 static const int smartgaps            = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar              = 1;       /* 0 means no bar */
 static const int topbar               = 1;       /* 0 means bottom bar */
-static const double activeopacity   = 1.0f;     /* Window opacity when it's focused (0 <= opacity <= 1) */
-static const double inactiveopacity = 0.875f;   /* Window opacity when it's inactive (0 <= opacity <= 1) */
+static const double activeopacity     = 1.0f;     /* Window opacity when it's focused (0 <= opacity <= 1) */
+static const double inactiveopacity   = 0.875f;   /* Window opacity when it's inactive (0 <= opacity <= 1) */
 static const int user_bh              = 32;      /* bar height */ 
 static const unsigned int baralpha    = 170;//0xd0
 static const unsigned int borderalpha = OPAQUE;
@@ -32,19 +32,18 @@ static const char cream[]             = "#d4be98";
 static const char blue[]              = "#458588";
 static const char grey[]              = "#222222";
 static const char *colors[][3]        = {
-	/*                   fg     bg     border   */
+	/*                    fg     bg     border   */
 	[SchemeNorm]     = { cream, black, black }, //inactive
 	[SchemeSel]      = { lcream,black, cream }, //active
 };
 static const unsigned int alphas[][3] = {
-	/*               fg      bg        border     */
-	[SchemeNorm] = { OPAQUE, baralpha, borderalpha },
-	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
+	/*                    fg      bg        border     */
+	[SchemeNorm]     = { OPAQUE, baralpha, borderalpha },
+	[SchemeSel]      = { OPAQUE, baralpha, borderalpha },
 };
 
 /* tagging */
 static const char *tags[] = {  "   ", "  ", "  ", "  ", "  ", "  ", };
-
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
@@ -56,17 +55,31 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
-static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+static const float mfact        = 0.55; /* factor of master area size [0.05..0.95] */
+static const int nmaster        = 1;    /* number of clients in master area */
+static const int resizehints    = 1;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
-
-static const Layout layouts[] = {
-	/* symbol     arrange function */
+static const Layout layouts[]   = {
+	/* symbol     arrange  function */
 	{ "           =",      tile },    /* first entry is default */
 	{ "           =",      NULL },    /* no layout function means floating behavior */
 	{ "  [M]       =",      monocle },
 };
+
+/* helper for spawning shell commands in the pre dwm-5.0 fashion */
+#define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
+
+/* Defining Application */
+static char dmenumon[2]       = "0"; /* component of dmenucmd, manipulated in spawn() */
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *termcmd[]  = { "alacritty", NULL };
+
+/* Defining Volume and Brightness Keys */
+static const char *upvol[]          = { "/usr/bin/pactl",       "set-sink-volume",   "0", "+5%",     NULL };
+static const char *downvol[]        = { "/usr/bin/pactl",       "set-sink-volume",   "0", "-5%",     NULL };
+static const char *mutevol[]        = { "/usr/bin/pactl",       "set-sink-mute",     "0", "toggle",  NULL };
+static const char *upbrightness[]   = { "/usr/bin/xbacklight",  "-inc",                   "10",      NULL };
+static const char *downbrightness[] = { "/usr/bin/xbacklight",  "-dec",                   "10",   NULL };
 
 /* key definitions */
 #define MODKEY Mod4Mask
@@ -77,21 +90,7 @@ static const Layout layouts[] = {
 	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
-/* helper for spawning shell commands in the pre dwm-5.0 fashion */
-#define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
-
-/* Defining Application */
-static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
-
-/* Defining Volume and Brightness Keys */
-static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
-static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
-static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
-static const char *upbrightness[]   = { "/usr/bin/xbacklight",  "-inc",  "10",   NULL };
-static const char *downbrightness[] = { "/usr/bin/xbacklight",  "-dec",  "10",   NULL };
-
+/* Key Bindings */
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } },
