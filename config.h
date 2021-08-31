@@ -6,7 +6,6 @@
 */
 
 /* See LICENSE file for copyright and license details. */
-#include <X11/XF86keysym.h>
 /* appearance */
 static const unsigned int borderpx    = 2;      /* border pixel of windows */
 static const unsigned int snap        = 32;     /* snap pixel */
@@ -56,6 +55,10 @@ static const Layout layouts[]   = {
 	{ "  [M]       =",      monocle },
 };
 
+/* Defining shell cmd and function keys libs */
+#define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
+#include <X11/XF86keysym.h>
+
 /* Defining Application */
 static char dmenumon[2]       = "0";    /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-p", "Run: ", NULL };
@@ -77,8 +80,6 @@ static const char *downbrightness[] = { "/usr/bin/xbacklight",  "-dec",         
 	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
-/* helper for spawning shell commands in the pre dwm-5.0 fashion */
-#define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* Key Bindings */
 static Key keys[] = {
