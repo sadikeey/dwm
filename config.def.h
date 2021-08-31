@@ -129,13 +129,13 @@ static Key keys[] = {
     { MODKEY|Mod1Mask,              XK_o,                      incrohgaps,     {.i = -1 } },
     { MODKEY|ShiftMask,             XK_y,                      incrovgaps,     {.i = +1 } },
     { MODKEY|ShiftMask,             XK_o,                      incrovgaps,     {.i = -1 } },  */
-    { MODKEY|ShiftMask,             XK_Return,                 zoom,           {0} }, //
+    { MODKEY|ShiftMask,             XK_Return,                 zoom,           {0} },
 	{ MODKEY,                       XK_Tab,                    view,           {0} },
 	{ MODKEY,                       XK_q,                      killclient,     {0} },
 	{ TERMMOD,                      XK_t,                      setlayout,      {.v = &layouts[0]} },
 	{ TERMMOD,                      XK_f,                      setlayout,      {.v = &layouts[1]} },
 	{ TERMMOD,                      XK_m,                      setlayout,      {.v = &layouts[2]} },
-	{ TERMMOD,                      XK_space,                  setlayout,      {0} }, //
+	{ TERMMOD,                      XK_space,                  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,                  togglefloating, {0} },
 	{ MODKEY|ShiftMask,             XK_f,                      togglefullscr,  {0} },
 	{ MODKEY,                       XK_0,                      view,           {.ui = ~0 } },
