@@ -12,7 +12,7 @@ static const double activeopacity     = 1.0f;   /* Window opacity when it's focu
 static const double inactiveopacity   = 0.875f; /* Window opacity when it's inactive (0 <= opacity <= 1) */
 static const int user_bh              = 24;     /* bar height */ 
 static const char *fonts[]            = {"Montserrat Semi Bold:size=11:antialias=true:autohint=true",
-                                         "FiraCode Nerd Font:size=12:antialias=true:autohint=true"};
+                                         "FiraCode Nerd Font:size=11:antialias=true:autohint=true"};
 static const char *colors[][3]        = {
 /* type                fg         bg          border    */ 
 [SchemeNorm]      = { "#000000", "#282828",  "#000000"  },
