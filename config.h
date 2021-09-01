@@ -1,11 +1,3 @@
-/*  ____  ____  _  __
-   / ___||  _ \| |/ /
-   \___ \| | | | ' /   
-    ___) | |_| | . \
-   |____/|____/|_|\_\
-*/
-
-/* See LICENSE file for copyright and license details. */
 /* appearance */
 static const unsigned int borderpx    = 2;      /* border pixel of windows */
 static const unsigned int snap        = 30;     /* snap pixel */
@@ -26,7 +18,7 @@ static const char *colors[][3]        = {
 [SchemeNorm]      = { "#000000", "#282828",  "#000000"  },
 [SchemeSel]       = { "#000000", "#282828",  "#ebdbb2"  },
 [SchemeTagsNorm]  = { "#ebdbb2", "#282828",  "#000000"  },
-[SchemeTagsSel]   = { "#282828", "#458588",  "#000000"  }, 
+[SchemeTagsSel]   = { "#ebdbb2", "#424242",  "#000000"  }, 
 [SchemeInfoNorm]  = { "#ebdbb2", "#282828",  "#000000"  },
 [SchemeInfoSel]   = { "#ebdbb2", "#282828",  "#000000"  },
 [SchemeStatus]    = { "#ebdbb2", "#282828",  "#000000"  }, 
@@ -52,9 +44,9 @@ static const int resizehints    = 1;    /* 1 means respect size hints in tiled r
 static const int lockfullscreen = 1;    /* 1 will force focus on the fullscreen window */
 static const Layout layouts[]   = {
 	/* symbol     arrange  function */
-	{ "ﰧ ",      tile },     /*  first entry is default */
-	{ " ",      NULL },     /* no layout function means floating behavior */
-	{ "[M] ",    monocle },
+	{ "ﰧ",      tile },     /*  first entry is default */
+	{ "",      NULL },     /* no layout function means floating behavior */
+	{ "[M]",    monocle },
 };
 
 /* Defining shell cmd and function keys libs */
