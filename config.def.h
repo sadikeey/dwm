@@ -1,5 +1,5 @@
 /* appearance */
-static const unsigned int borderpx    = 2;      /* border pixel of windows */
+static const unsigned int borderpx    = 1;      /* border pixel of windows */
 static const unsigned int snap        = 30;     /* snap pixel */
 static const unsigned int gappih      = 6;      /* horiz inner gap between windows */
 static const unsigned int gappiv      = 6;      /* vert inner gap between windows */
@@ -16,12 +16,12 @@ static const char *fonts[]            = {"Montserrat Semi Bold:size=11:antialias
 static const char *colors[][3]        = {
 /* type                fg         bg          border    */ 
 [SchemeNorm]      = { "#000000", "#282828",  "#000000"  },
-[SchemeSel]       = { "#000000", "#282828",  "#ebdbb2"  },
-[SchemeTagsNorm]  = { "#ebdbb2", "#282828",  "#000000"  },
-[SchemeTagsSel]   = { "#ebdbb2", "#4a4a4a",  "#000000"  }, 
-[SchemeInfoNorm]  = { "#ebdbb2", "#282828",  "#000000"  },
-[SchemeInfoSel]   = { "#ebdbb2", "#282828",  "#000000"  },
-[SchemeStatus]    = { "#ebdbb2", "#282828",  "#000000"  }, 
+[SchemeSel]       = { "#000000", "#282828",  "#fbf1c7"  },
+[SchemeTagsNorm]  = { "#fbf1c7", "#282828",  "#000000"  },
+[SchemeTagsSel]   = { "#fbf1c7", "#4a4a4a",  "#000000"  }, 
+[SchemeInfoNorm]  = { "#fbf1c7", "#282828",  "#000000"  },
+[SchemeInfoSel]   = { "#fbf1c7", "#282828",  "#000000"  },
+[SchemeStatus]    = { "#fbf1c7", "#282828",  "#000000"  }, 
 };
 
 /* tagging */
@@ -55,7 +55,7 @@ static const Layout layouts[]   = {
 
 /* Defining Application */
 static char dmenumon[2]       = "0";    /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-p", "Run: ", NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-p", "Run:", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 
 /* Defining Volume and Brightness Keys */
