@@ -15,13 +15,13 @@ static const char *fonts[]            = {"Montserrat Semi Bold:size=9:antialias=
                                          "FiraCode Nerd Font:size=10:antialias=true:autohint=true"};
 static const char *colors[][3]        = {
 /* type                fg         bg          border    */ 
-[SchemeNorm]      = { "#ECEFF4", "#2E3440",  "#000000"  },
-[SchemeSel]       = { "#2E3440", "#8FBCBB",  "#ECEFF4"  },
-[SchemeTagsNorm]  = { "#ECEFF4", "#2E3440",  "#000000"  },
-[SchemeTagsSel]   = { "#2E3440", "#8FBCBB",  "#000000"  }, 
+[SchemeNorm]      = { "#D8DEE9", "#2E3440",  "#000000"  },
+[SchemeSel]       = { "#2E3440", "#8FBCBB",  "#D8DEE9"  },
+[SchemeTagsNorm]  = { "#8FBCBB", "#2E3440",  "#000000"  },
+[SchemeTagsSel]   = { "#EBCB8B", "#2E3440",  "#000000"  }, 
 [SchemeInfoNorm]  = { "#2E3440", "#2E3440",  "#000000"  },
-[SchemeInfoSel]   = { "#2E3440", "#8FBCBB",  "#000000"  },
-[SchemeStatus]    = { "#ECEFF4", "#2E3440",  "#000000"  }, 
+[SchemeInfoSel]   = { "#EBCB8B", "#2E3440",  "#000000"  },
+[SchemeStatus]    = { "#D8DEE9", "#2E3440",  "#000000"  }, 
 };
 
 /* tagging */
