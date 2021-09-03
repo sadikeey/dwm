@@ -10,13 +10,13 @@ static const int showbar              = 1;      /* 0 means no bar */
 static const int topbar               = 1;      /* 0 means bottom bar */
 static const double activeopacity     = 1.0f;   /* Window opacity when it's focused (0 <= opacity <= 1) */
 static const double inactiveopacity   = 0.875f; /* Window opacity when it's inactive (0 <= opacity <= 1) */
-static const int user_bh              = 22;     /* bar height */ 
+static const int user_bh              = 24;     /* bar height */ 
 static const char *fonts[]            = {"Montserrat Semi Bold:size=9:antialias=true:autohint=true",
                                          "FiraCode Nerd Font:size=10:antialias=true:autohint=true"};
 static const char *colors[][3]        = {
 /* type                fg         bg          border    */ 
 [SchemeNorm]      = { "#D8DEE9", "#2E3440",  "#000000"  },
-[SchemeSel]       = { "#2E3440", "#8FBCBB",  "#D8DEE9"  },
+[SchemeSel]       = { "#2E3440", "#8FBCBB",  "#EBCB8B"  },
 [SchemeTagsNorm]  = { "#8FBCBB", "#2E3440",  "#000000"  },
 [SchemeTagsSel]   = { "#EBCB8B", "#2E3440",  "#000000"  }, 
 [SchemeInfoNorm]  = { "#2E3440", "#2E3440",  "#000000"  },
