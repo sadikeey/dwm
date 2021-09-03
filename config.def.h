@@ -1,5 +1,5 @@
 /* appearance */
-static const unsigned int borderpx    = 2;      /* border pixel of windows */
+static const unsigned int borderpx    = 1;      /* border pixel of windows */
 static const unsigned int snap        = 30;     /* snap pixel */
 static const unsigned int gappih      = 6;      /* horiz inner gap between windows */
 static const unsigned int gappiv      = 6;      /* vert inner gap between windows */
@@ -10,23 +10,24 @@ static const int showbar              = 1;      /* 0 means no bar */
 static const int topbar               = 1;      /* 0 means bottom bar */
 static const double activeopacity     = 1.0f;   /* Window opacity when it's focused (0 <= opacity <= 1) */
 static const double inactiveopacity   = 0.875f; /* Window opacity when it's inactive (0 <= opacity <= 1) */
-static const int user_bh              = 24;     /* bar height */ 
-static const char *fonts[]            = {"Montserrat Semi Bold:size=11:antialias=true:autohint=true",
-                                         "FiraCode Nerd Font:size=11:antialias=true:autohint=true"};
+static const int user_bh              = 22;     /* bar height */ 
+static const char *fonts[]            = {"Montserrat Semi Bold:size=9:antialias=true:autohint=true",
+                                         "FiraCode Nerd Font:size=10:antialias=true:autohint=true"};
 static const char *colors[][3]        = {
 /* type                fg         bg          border    */ 
-[SchemeNorm]      = { "#000000", "#282828",  "#000000"  },
-[SchemeSel]       = { "#000000", "#282828",  "#03dddc"  },
-[SchemeTagsNorm]  = { "#fbf1c7", "#282828",  "#000000"  },
-[SchemeTagsSel]   = { "#fbf1c7", "#4a4a4a",  "#000000"  }, 
-[SchemeInfoNorm]  = { "#fbf1c7", "#282828",  "#000000"  },
-[SchemeInfoSel]   = { "#fbf1c7", "#282828",  "#000000"  },
-[SchemeStatus]    = { "#fbf1c7", "#282828",  "#000000"  }, 
+[SchemeNorm]      = { "#ECEFF4", "#2E3440",  "#000000"  },
+[SchemeSel]       = { "#2E3440", "#8FBCBB",  "#ECEFF4"  },
+[SchemeTagsNorm]  = { "#ECEFF4", "#2E3440",  "#000000"  },
+[SchemeTagsSel]   = { "#2E3440", "#8FBCBB",  "#000000"  }, 
+[SchemeInfoNorm]  = { "#2E3440", "#2E3440",  "#000000"  },
+[SchemeInfoSel]   = { "#2E3440", "#8FBCBB",  "#000000"  },
+[SchemeStatus]    = { "#ECEFF4", "#2E3440",  "#000000"  }, 
 };
 
 /* tagging */
-/* static const char *tags[] = {  "  ", "  ", "  ", "  ", "  ", "  ", }; */
-static const char *tags[] = {  "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+//static const char *tags[] = {  "1", "2", "3", "4", "5", "6", "7", "8", "9" }; 
+//static const char *tags[] = {  "  ", "  ", "  ", "  ", "  ", "  ", }; 
+static const char *tags[] = { "web", "dev", "mus", "chat", "vid", "doc", "sys", }; 
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
@@ -44,9 +45,9 @@ static const int resizehints    = 1;    /* 1 means respect size hints in tiled r
 static const int lockfullscreen = 1;    /* 1 will force focus on the fullscreen window */
 static const Layout layouts[]   = {
 	/* symbol     arrange  function */
-	{ "ﰧ",      tile },     /*  first entry is default */
-	{ "",      NULL },     /* no layout function means floating behavior */
-	{ "[M]",    monocle },
+	{ "| ﰧ  |",      tile },     /*  first entry is default */
+	{ "|    |",      NULL },     /* no layout function means floating behavior */
+	{ "| M  |",    monocle },
 };
 
 /* Defining shell cmd and function keys libs */
@@ -118,8 +119,6 @@ static Key keys[] = {
 	TAGKEYS(                        XK_5,                                      4)
 	TAGKEYS(                        XK_6,                                      5)
 	TAGKEYS(                        XK_7,                                      6)
-	TAGKEYS(                        XK_8,                                      7)
-	TAGKEYS(                        XK_9,                                      8)
 /*  { MODKEY|Mod1Mask,              XK_h,                      incrgaps,       {.i = +1 } },
     { MODKEY|Mod1Mask,              XK_l,                      incrgaps,       {.i = -1 } },
     { MODKEY|Mod1Mask|ShiftMask,    XK_h,                      incrogaps,      {.i = +1 } },
