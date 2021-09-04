@@ -56,7 +56,7 @@ static const Layout layouts[]   = {
 
 /* Defining Application */
 static char dmenumon[2]       = "0";    /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-p", "Run:", NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-p", "dmenu  :", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 
 /* Defining Volume and Brightness Keys */
@@ -93,12 +93,13 @@ static Key keys[] = {
 	{ MODKEY,                       XK_l,                      setmfact,       {.f = +0.05} },
   { MODKEY|ShiftMask,             XK_equal,                  togglegaps,     {0} },
 	{ MODKEY|ShiftMask,             XK_b,                      togglebar,      {0} },
-	{ MODKEY|ShiftMask,             XK_f,                      togglefullscr,  {0} },
+	{ MODKEY,                       XK_f,                      togglefullscr,  {0} },
   { MODKEY|ShiftMask,             XK_Return,                 zoom,           {0} },
 	{ MODKEY,                       XK_Tab,                    view,           {0} },
 	{ MODKEY,                       XK_q,                      killclient,     {0} },
 	{ MODKEY|ShiftMask,             XK_t,                      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY|ShiftMask,             XK_m,                      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY|ShiftMask,             XK_f,                      setlayout,      {.v = &layouts[1]} }, 
+  { MODKEY|ShiftMask,             XK_m,                      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY|ShiftMask,             XK_space,                  setlayout,      {0} },
 	{ MODKEY,                       XK_0,                      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,                      tag,            {.ui = ~0 } },
@@ -134,8 +135,7 @@ static Key keys[] = {
     { MODKEY|Mod1Mask,              XK_o,                      incrohgaps,     {.i = -1 } },
     { MODKEY|ShiftMask,             XK_y,                      incrovgaps,     {.i = +1 } },
     { MODKEY|ShiftMask,             XK_o,                      incrovgaps,     {.i = -1 } },  
-	  { Mod1Mask|ShiftMask,           XK_space,                  togglefloating, {0} },
-  	{ MODKEY|ShiftMask,             XK_f,                      setlayout,      {.v = &layouts[1]} }, */
+	  { Mod1Mask|ShiftMask,           XK_space,                  togglefloating, {0} },          */
 };
 
 /* button definitions */
