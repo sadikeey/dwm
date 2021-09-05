@@ -77,7 +77,7 @@ static const char *downbrightness[] = { "/usr/bin/xbacklight",  "-dec",         
 /* Key Bindings */
 static Key keys[] = {
 	/* modifier                     key                        function        argument */
-	{ MODKEY,                       XK_space,                  spawn,          {.v = dmenucmd } },
+	{ MODKEY|ShiftMask,             XK_Return,                 spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return,                 spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_w,                      spawn,          SHCMD("$BROWSER") },
 	{ MODKEY,                       XK_m,                      spawn,          SHCMD("spotify") },
@@ -94,7 +94,7 @@ static Key keys[] = {
   { MODKEY|ShiftMask,             XK_equal,                  togglegaps,     {0} },
 	{ MODKEY|ShiftMask,             XK_b,                      togglebar,      {0} },
 	{ MODKEY,                       XK_f,                      togglefullscr,  {0} },
-  { MODKEY|ShiftMask,             XK_Return,                 zoom,           {0} },
+  //{ MODKEY|ShiftMask,             XK_Return,                 zoom,           {0} },
 	{ MODKEY,                       XK_Tab,                    view,           {0} },
 	{ MODKEY,                       XK_q,                      killclient,     {0} },
 	{ MODKEY|ShiftMask,             XK_t,                      setlayout,      {.v = &layouts[0]} },
