@@ -1,5 +1,5 @@
 /* appearance */
-static const unsigned int borderpx    = 1;      /* border pixel of windows */
+static const unsigned int borderpx    = 2;      /* border pixel of windows */
 static const unsigned int snap        = 30;     /* snap pixel */
 static const unsigned int gappih      = 6;      /* horiz inner gap between windows */
 static const unsigned int gappiv      = 6;      /* vert inner gap between windows */
@@ -15,7 +15,7 @@ static const char *fonts[]            = {"Montserrat Semi Bold:size=9:antialias=
                                          "FiraCode Nerd Font:size=10:antialias=true:autohint=true"};
 static const char *colors[][3]        = {
 /* type                fg         bg          border    */ 
-[SchemeNorm]      = { "#D8DEE9", "#2E3440",  "#000000"  },
+[SchemeNorm]      = { "#D8DEE9", "#2E3440",  "#2E3440"  },
 [SchemeSel]       = { "#2E3440", "#8FBCBB",  "#EBCB8B"  },
 [SchemeTagsNorm]  = { "#8FBCBB", "#2E3440",  "#000000"  },
 [SchemeTagsSel]   = { "#EBCB8B", "#2E3440",  "#000000"  }, 
