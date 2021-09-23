@@ -83,6 +83,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_m,                      spawn,          SHCMD("spotify") },
 	{ MODKEY,                       XK_e,                      spawn,          SHCMD("code") },
 	{ MODKEY,                       XK_p,                      spawn,          SHCMD("pcmanfm") },
+	//{ MODKEY,                       XK_g,                      spawn,          SHCMD("flatpak run com.jetbrains.PyCharm-Community") },
 	{ MODKEY|ShiftMask,             XK_j,                      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,                      rotatestack,    {.i = -1 } },
 	{ MODKEY,                       XK_j,                      focusstack,     {.i = +1 } },
