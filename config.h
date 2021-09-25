@@ -58,6 +58,7 @@ static const Layout layouts[]   = {
 static char dmenumon[2]       = "0";    /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-p", "dmenu  :", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
+static const char *powermenu[]  = { "/home/sdk/.config/scripts/powermenu.sh", NULL };
 
 /* Defining Volume and Brightness Keys */
 static const char *upvol[]          = { "/usr/bin/pactl",       "set-sink-volume",   "0", "+5%",     NULL };
@@ -79,11 +80,12 @@ static Key keys[] = {
 	/* modifier                     key                        function        argument */
 	{ MODKEY|ShiftMask,             XK_Return,                 spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return,                 spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,             XK_s,                      spawn,          {.v = powermenu } },
 	{ MODKEY,                       XK_w,                      spawn,          SHCMD("$BROWSER") },
 	{ MODKEY,                       XK_m,                      spawn,          SHCMD("spotify") },
 	{ MODKEY,                       XK_e,                      spawn,          SHCMD("code") },
 	{ MODKEY,                       XK_p,                      spawn,          SHCMD("pcmanfm") },
-	//{ MODKEY,                       XK_g,                      spawn,          SHCMD("flatpak run com.jetbrains.PyCharm-Community") },
+  { MODKEY,                       XK_g,                      spawn,          SHCMD("flatpak run com.jetbrains.PyCharm-Community") },
 	{ MODKEY|ShiftMask,             XK_j,                      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,                      rotatestack,    {.i = -1 } },
 	{ MODKEY,                       XK_j,                      focusstack,     {.i = +1 } },
