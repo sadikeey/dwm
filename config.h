@@ -55,9 +55,9 @@ static const Layout layouts[]   = {
 #include <X11/XF86keysym.h>
 
 /* Defining Application */
-static char dmenumon[2]       = "0";    /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-p", "dmenu  :", NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
+static char dmenumon[2]         = "0";    /* component of dmenucmd, manipulated in spawn() */
+static const char *dmenucmd[]   = { "dmenu_run", "-p", "dmenu   :", NULL };
+static const char *termcmd[]    = { "st", NULL };
 static const char *powermenu[]  = { "/home/sdk/.config/scripts/powermenu.sh", NULL };
 
 /* Defining Volume and Brightness Keys */
@@ -85,7 +85,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_m,                      spawn,          SHCMD("spotify") },
 	{ MODKEY,                       XK_e,                      spawn,          SHCMD("code") },
 	{ MODKEY,                       XK_p,                      spawn,          SHCMD("pcmanfm") },
-  { MODKEY,                       XK_g,                      spawn,          SHCMD("flatpak run com.jetbrains.PyCharm-Community") },
+  { MODKEY|ShiftMask,             XK_e,                      spawn,          SHCMD("flatpak run com.jetbrains.PyCharm-Community") },
 	{ MODKEY|ShiftMask,             XK_j,                      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,                      rotatestack,    {.i = -1 } },
 	{ MODKEY,                       XK_j,                      focusstack,     {.i = +1 } },
