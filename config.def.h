@@ -10,24 +10,27 @@ static const int showbar              = 1;      /* 0 means no bar */
 static const int topbar               = 1;      /* 0 means bottom bar */
 static const double activeopacity     = 1.0f;   /* Window opacity when it's focused (0 <= opacity <= 1) */
 static const double inactiveopacity   = 0.875f; /* Window opacity when it's inactive (0 <= opacity <= 1) */
-static const int user_bh              = 24;     /* bar height */ 
+static const int user_bh              = 23;     /* bar height */ 
 static const char *fonts[]            = {"Montserrat Semi Bold:size=9:antialias=true:autohint=true",
                                          "FiraCode Nerd Font:size=10:antialias=true:autohint=true"};
 static const char *colors[][3]        = {
 /* type                fg         bg          border    */ 
-[SchemeNorm]      = { "#D8DEE9", "#2E3440",  "#2E3440"  },
-[SchemeSel]       = { "#2E3440", "#8FBCBB",  "#EBCB8B"  },
-[SchemeTagsNorm]  = { "#8FBCBB", "#2E3440",  "#000000"  },
-[SchemeTagsSel]   = { "#EBCB8B", "#2E3440",  "#000000"  }, 
-[SchemeInfoNorm]  = { "#2E3440", "#2E3440",  "#000000"  },
-[SchemeInfoSel]   = { "#EBCB8B", "#2E3440",  "#000000"  },
-[SchemeStatus]    = { "#D8DEE9", "#2E3440",  "#000000"  }, 
-};
+[SchemeNorm]      = { "#d0d0d0", "#282a36",  "#282c34"  },
+[SchemeSel]       = { "#282a36", "#74438f",  "#74438f"  },
 
+[SchemeTagsNorm]  = { "#cccccc", "#282a36",  "#000000"  },
+[SchemeTagsSel]   = { "#ffffff", "#74438f",  "#000000"  }, 
+[SchemeInfoNorm]  = { "#ffffff", "#282a36",  "#000000"  },
+[SchemeInfoSel]   = { "#ffffff", "#74438f",  "#000000"  },
+[SchemeStatus]    = { "#d0d0d0", "#282a36",  "#000000"  }, 
+};
+//#F07178 #46d9ff
 /* tagging */
 //static const char *tags[] = {  "1", "2", "3", "4", "5", "6", "7", "8", "9" }; 
 //static const char *tags[] = {  "  ", "  ", "  ", "  ", "  ", "  ", "" }; 
-static const char *tags[] = { "  web", "dev", "mus", "chat", "vid", "doc", "sys", }; 
+//static const char *tags[] = { "     web   |", "   dev   |", "   mus   |", "ﯮ   chat   |", "   vid   |", "   doc   |", "煉   sys    |", }; 
+//static const char *tags[] = { "     web   ", "   dev   ", "   mus   ", "   chat   ", "   vid   ", "   doc   ", "煉   sys    ", }; 
+static const char *tags[] = { "web", "dev", "mus", "chat", "vid", "doc", "gfx", "sys", }; 
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
@@ -123,6 +126,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_5,                                      4)
 	TAGKEYS(                        XK_6,                                      5)
 	TAGKEYS(                        XK_7,                                      6)
+	TAGKEYS(                        XK_8,                                      7)
 /*  { MODKEY|Mod1Mask,              XK_h,                      incrgaps,       {.i = +1 } },
     { MODKEY|Mod1Mask,              XK_l,                      incrgaps,       {.i = -1 } },
     { MODKEY|Mod1Mask|ShiftMask,    XK_h,                      incrogaps,      {.i = +1 } },
