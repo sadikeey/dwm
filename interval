@@ -1,0 +1,20 @@
+#include <stdio.h>
+// x^3-4x-9
+
+float f(int x)
+{
+    return (x * x * x - 4 * x - 9);
+}
+
+int main(int y)
+{
+    float f1, f2;
+    int i;
+    for (i = 0; i < 10; i++)
+    {
+        f1 = f(i);
+        f2 = f(i + 1);
+        if ((f1 < 0 && f2 > 0) || (f1 > 0 && f2 < 0))
+            printf("Roots of x^3-4x-9 are %d,%d\n", i, i + 1);
+    }
+}
