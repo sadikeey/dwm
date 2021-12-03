@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <math.h>
+float f(float x)
+{
+    return (x * x * x - 2 * x - 5);
+}
+float eqn(float x1, float x2, float f1, float f2)
+{
+    float x;
+    return x = (x1 * f2 - x2 * f1) / (f2 - f1);
+}
+void main()
+{
+    float x1 = 2, x2 = 3, x3;
+    float f1, f2, f3;
+    int i = 1;
+    do
+    {
+        printf("\nIteration %d:", i);
+        f1 = f(x1);
+        printf("\nf1=%f", f1);
+        f2 = f(x2);
+        printf("\nf2=%f", f2);
+        x3 = eqn(x1, x2, f1, f2);
+        printf("\nx3=%f", x3);
+        f3 = f(x3);
+        printf("\nf3=%f", f3);
+        if (f3 > 0)
+        {
+            x2 = x3;
+        }
+        else
+        {
+            x1 = x3;
+        }
+        i++;
+    } while (fabs(f3) > 0.005);
+    printf("\nIteration=%d: \nApprox root to the x=%f", i, x3);
+    printf("\nValue of function at the approx root, f(x)=%f", f3);
+}
